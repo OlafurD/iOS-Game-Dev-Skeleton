@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>lateralForce</key>
+	<string>7000.0f</string>
+	<key>impulse</key>
+	<string>40000.0f</string>
+	<key>tumbleWeedPosition</key>
+	<string>{50,150}</string>
+	<key>gravity</key>
+	<string>150.0f</string>
+</dict>
+</plist>
