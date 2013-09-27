@@ -40,17 +40,18 @@
         
         //set up world
         [self setupGraphicsLandscale];
-        [self setupPhyschsLandscape];
         
         //Create main character (tumbleWeed)
         NSString *tumbleWeedPositionString = _configuration[@"tumbleWeedPosition"];
         _tumbleWeed = [[TumbleWeed alloc] initWithSpace:_space position:CGPointFromString(tumbleWeedPositionString)];
         _tumbleWeed.scale = 0.1;
-        [self addChild:_tumbleWeed];
+        
+        [_gameNode addChild:_tumbleWeed];
         
         //apply lateral force to main character (tumbleWeed)
         CGFloat lateralForce = [_configuration[@"lateralForce"] floatValue];
         [_tumbleWeed.chipmunkBody applyForce:cpv(lateralForce, 0) offset:cpvzero];
+        
         
         //Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
@@ -75,43 +76,11 @@
     //apply vertical force on character
 }
 
--(void)setupPhyschsLandscape
-{
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Wall 2 NE" withExtension:@"png"];
-    ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
-    
-    ChipmunkPolylineSet *contour = [sampler marchAllWithBorder:NO hard:YES];
-    ChipmunkPolyline *line = [contour lineAtIndex:0];
-    ChipmunkPolyline *simpleLine = [line simplifyCurves:1];
-    
-    ChipmunkBody *terrainBody = [ChipmunkBody staticBody];
-    NSArray *terrainShapes = [simpleLine asChipmunkSegmentsWithBody:terrainBody radius:0 offset:cpvzero];
-    for(ChipmunkShape *shape in terrainShapes)
-    {
-        [_space addShape:shape];
-    }
-    
-   /* NSURL *url2 = [[NSBundle mainBundle] URLForResource:@"Wall 2 NW" withExtension:@"png"];
-    ChipmunkImageSampler *sampler2 = [ChipmunkImageSampler samplerWithImageFile:url2 isMask:NO];
-    
-    ChipmunkPolylineSet *contour2 = [sampler2 marchAllWithBorder:NO hard:YES];
-    ChipmunkPolyline *line2 = [contour2 lineAtIndex:0];
-    ChipmunkPolyline *simpleLine2 = [line2 simplifyCurves:1];
-    
-    ChipmunkBody *terrainBody2 = [ChipmunkBody staticBody];
-    NSArray *terrainShapes2 = [simpleLine2 asChipmunkSegmentsWithBody:terrainBody2 radius:0 offset:cpvzero];
-    for(ChipmunkShape *shape in terrainShapes2)
-    {
-        [_space addShape:shape];
-    } */
-
-}
-
 - (void)update:(ccTime)delta
 {
-    /*
+    
     if(_tumbleWeed.position.x >= (_winSize.width / 2))
-        _parallaxNode.position = ccp( - (_tumbleWeed.position.x - (_winSize.width /2)), 0);*/
+        _parallaxNode.position = ccp( - (_tumbleWeed.position.x - (_winSize.width /2)), 0);
     
     CGFloat fixedTimeStep = 1.0f / 240.0f;
     _accumulator += delta;
@@ -124,6 +93,25 @@
     if(_isTouching)
         [self applyImpulseOnTumbleweed];
 }
+
+-(void)setupPhysicsLandscape: (cpVect)offs withURL:(NSURL*)url
+{
+    
+    ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
+    
+    ChipmunkPolylineSet *contour = [sampler marchAllWithBorder:NO hard:YES];
+    ChipmunkPolyline *line = [contour lineAtIndex:0];
+    ChipmunkPolyline *simpleLine = [line simplifyCurves:1];
+    
+    ChipmunkBody *terrainBody = [ChipmunkBody staticBody];
+    NSArray *terrainShapes = [simpleLine asChipmunkSegmentsWithBody:terrainBody radius:0 offset:offs];
+    for(ChipmunkShape *shape in terrainShapes)
+    {
+        [_space addShape:shape];
+    }
+    
+}
+
 
 - (void)setupGraphicsLandscale
 {
@@ -160,12 +148,15 @@
     _skyLayer = [CCNode node];
     [self addRoots];
     
+    _gameNode = [CCNode node];
+    
     //set up our parallax node
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
     
     [_parallaxNode addChild:_skyLayer z:0 parallaxRatio:ccp(0.5f, 1.0f) positionOffset:CGPointZero];
     [_parallaxNode addChild:_groundLayer z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    [_parallaxNode addChild:_gameNode z:2 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
 }
 
@@ -187,12 +178,18 @@
         ground.anchorPoint = ccp(0, 0);
         ground.position = ccp(2 * i * ground.contentSize.width ,0);
         [_groundLayer addChild:ground];
-    
+        
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"Wall 2 NW" withExtension:@"png"];
+        [self setupPhysicsLandscape:cpv(2*i*ground.contentSize.width, -64) withURL:url];
+        
         
         CCSprite *ground2 = [CCSprite spriteWithFile:@"Wall 2 NE.png"];
         ground2.anchorPoint = ccp(0, 0);
         ground2.position = ccp((2*i + 1) * ground2.contentSize.width, 0);
         [_groundLayer addChild:ground2];
+        
+         url = [[NSBundle mainBundle] URLForResource:@"Wall 2 NE" withExtension:@"png"];
+        [self setupPhysicsLandscape:cpv((2*i + 1) * ground2.contentSize.width, -64) withURL:url];
         
     }
     
@@ -201,10 +198,14 @@
 {
     for(NSInteger i = 0; i < 60; i++)
     {
+        
         CCSprite *roots = [CCSprite spriteWithFile:@"Roots.png"];
         roots.anchorPoint = ccp(0, 0);
         roots.position = ccp(i * roots.contentSize.width, _winSize.height - roots.contentSize.height);
         [_skyLayer addChild:roots];
+        
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"Roots" withExtension:@"png"];
+        [self setupPhysicsLandscape:cpv((i)*roots.contentSize.width - 100, 190) withURL:url];
     }
 }
 

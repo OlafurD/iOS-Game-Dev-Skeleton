@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>lateralForce</key>
-	<string>7000.0f</string>
+	<string>20000.0f</string>
 	<key>impulse</key>
 	<string>40000.0f</string>
 	<key>tumbleWeedPosition</key>

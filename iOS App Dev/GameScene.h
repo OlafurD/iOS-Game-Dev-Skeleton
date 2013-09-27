@@ -20,6 +20,8 @@
     CCLayer *_groundLayer;
     CCLayer *_backgroundLayer;
     
+    CCNode *_gameNode;
+    
     TumbleWeed *_tumbleWeed;
     
     //Chipmunk related objects
@@ -28,5 +30,7 @@
     
     bool _isTouching;
 }
+
+
 
 @end
