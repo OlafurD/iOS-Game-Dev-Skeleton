@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "InputLayer.h"
 
-@class TumbleWeed;
+@class JungleParrot;
 @interface GameScene : CCScene<InputLayerDelegate>
 {
     CGSize _winSize;
@@ -20,9 +20,12 @@
     CCLayer *_groundLayer;
     CCLayer *_backgroundLayer;
     
+    NSMutableArray *groundTiles;
+    NSMutableArray *roofRoots;
+    
     CCNode *_gameNode;
     
-    TumbleWeed *_tumbleWeed;
+    JungleParrot *_jungleParrot;
     
     //Chipmunk related objects
     ChipmunkSpace *_space;

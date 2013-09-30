@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface TumbleWeed : CCPhysicsSprite
+@interface JungleParrot : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
 }
