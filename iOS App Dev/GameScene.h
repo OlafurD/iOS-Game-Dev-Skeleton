@@ -9,26 +9,53 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "InputLayer.h"
+#import "HudLayer.h"
 
 @class JungleParrot;
+@class WoodenBox;
+@class Banana;
 @interface GameScene : CCScene<InputLayerDelegate>
 {
+
     CGSize _winSize;
-    NSDictionary *_configuration;
-    CCParallaxNode *_parallaxNode;
-    CCLayer *_skyLayer;
-    CCLayer *_groundLayer;
-    CCLayer *_backgroundLayer;
-    
-    NSMutableArray *groundTiles;
-    NSMutableArray *roofRoots;
     
     CCNode *_gameNode;
     
+    CCParallaxNode *_parallaxNode;
+    
+    WoodenBox *_boxObsticle;
+    
+    Banana *_banana;
+    
+    float _speed;
+    
+    NSMutableArray *_boxes;
+    NSMutableArray *_bananas;
+    NSMutableArray *groundTiles;
+    NSMutableArray *urlGroundTiles;
+    NSMutableArray *roofRoots;
+    
+    int _objectScore;
+    
+    NSInteger _totalScore;
+    
+    NSDictionary *_configuration;
+    
+    CCLayer *_groundLayer;
+    CCLayer *_skyLayer;
+    CCLayer *_backgroundLayer;
+    CCLayer *_boxLayer;
+    CCLayer *_bananaLayer;
+    CCLayer *_textLayer;
+    
+    CCLabelTTF *_label;
+    
+    CCParticleSystemQuad *_particles;
+    
     JungleParrot *_jungleParrot;
     
-    //Chipmunk related objects
     ChipmunkSpace *_space;
+    
     ccTime _accumulator;
     
     bool _isTouching;

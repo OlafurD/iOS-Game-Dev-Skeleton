@@ -143,7 +143,16 @@
 		0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3130E017E85D0D00D0829B /* ImageIO.framework */; };
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* GameScene.m */; };
+		8406D83217FB10100076204E /* Healthbar2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8406D83117FB10100076204E /* Healthbar2.png */; };
+		8406D83517FB10360076204E /* HealthBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406D83417FB10360076204E /* HealthBar.m */; };
+		8406D83817FB11BB0076204E /* HudLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8406D83717FB11BB0076204E /* HudLayer.m */; };
 		8425C0FB17F88EA5002F8C6A /* Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 8425C0FA17F88EA5002F8C6A /* Empty.png */; };
+		844E04BF17F9859D00056C59 /* WoodenBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E04BE17F9859D00056C59 /* WoodenBox.m */; };
+		844E04C117F9989F00056C59 /* woodBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 844E04C017F9989F00056C59 /* woodBox.png */; };
+		844E04C317F9AE2B00056C59 /* BigBanana.png in Resources */ = {isa = PBXBuildFile; fileRef = 844E04C217F9AE2B00056C59 /* BigBanana.png */; };
+		844E04C617F9AE4700056C59 /* Banana.m in Sources */ = {isa = PBXBuildFile; fileRef = 844E04C517F9AE4700056C59 /* Banana.m */; };
+		847EBCD317FB083700526C34 /* splash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847EBCD217FB083700526C34 /* splash.plist */; };
+		847EBCD617FB0B9200526C34 /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 847EBCD517FB0B9200526C34 /* MenuScene.m */; };
 		84C16BCD17F5CA66001B435C /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BCC17F5CA66001B435C /* InputLayer.m */; };
 		84C16BD017F5D549001B435C /* JungleParrot.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C16BCF17F5D549001B435C /* JungleParrot.m */; };
 		84CBB83117F4870200680D3B /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CBB83017F4870200680D3B /* Config.plist */; };
@@ -514,7 +523,21 @@
 		0B31313C17E85ECE00D0829B /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		0B31313E17E8662800D0829B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		8406D83117FB10100076204E /* Healthbar2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Healthbar2.png; sourceTree = "<group>"; };
+		8406D83317FB10360076204E /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
+		8406D83417FB10360076204E /* HealthBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthBar.m; sourceTree = "<group>"; };
+		8406D83617FB11BB0076204E /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
+		8406D83717FB11BB0076204E /* HudLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudLayer.m; sourceTree = "<group>"; };
 		8425C0FA17F88EA5002F8C6A /* Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Empty.png; sourceTree = "<group>"; };
+		844E04BD17F9859D00056C59 /* WoodenBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WoodenBox.h; sourceTree = "<group>"; };
+		844E04BE17F9859D00056C59 /* WoodenBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WoodenBox.m; sourceTree = "<group>"; };
+		844E04C017F9989F00056C59 /* woodBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = woodBox.png; sourceTree = "<group>"; };
+		844E04C217F9AE2B00056C59 /* BigBanana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigBanana.png; sourceTree = "<group>"; };
+		844E04C417F9AE4700056C59 /* Banana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banana.h; sourceTree = "<group>"; };
+		844E04C517F9AE4700056C59 /* Banana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banana.m; sourceTree = "<group>"; };
+		847EBCD217FB083700526C34 /* splash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = splash.plist; sourceTree = "<group>"; };
+		847EBCD417FB0B9200526C34 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		847EBCD517FB0B9200526C34 /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 		84C16BCB17F5CA66001B435C /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		84C16BCC17F5CA66001B435C /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
 		84C16BCE17F5D549001B435C /* JungleParrot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JungleParrot.h; sourceTree = "<group>"; };
@@ -631,8 +654,18 @@
 				0B31313F17E8662800D0829B /* GameScene.m */,
 				84C16BCB17F5CA66001B435C /* InputLayer.h */,
 				84C16BCC17F5CA66001B435C /* InputLayer.m */,
+				8406D83317FB10360076204E /* HealthBar.h */,
+				8406D83417FB10360076204E /* HealthBar.m */,
 				84C16BCE17F5D549001B435C /* JungleParrot.h */,
 				84C16BCF17F5D549001B435C /* JungleParrot.m */,
+				8406D83617FB11BB0076204E /* HudLayer.h */,
+				8406D83717FB11BB0076204E /* HudLayer.m */,
+				844E04BD17F9859D00056C59 /* WoodenBox.h */,
+				844E04BE17F9859D00056C59 /* WoodenBox.m */,
+				847EBCD417FB0B9200526C34 /* MenuScene.h */,
+				847EBCD517FB0B9200526C34 /* MenuScene.m */,
+				844E04C417F9AE4700056C59 /* Banana.h */,
+				844E04C517F9AE4700056C59 /* Banana.m */,
 				0B312F4217E85CF200D0829B /* Resources */,
 				0B312F5A17E85CF200D0829B /* libs */,
 				0B3130CE17E85CF400D0829B /* Supporting Files */,
@@ -643,6 +676,9 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8406D83117FB10100076204E /* Healthbar2.png */,
+				844E04C217F9AE2B00056C59 /* BigBanana.png */,
+				844E04C017F9989F00056C59 /* woodBox.png */,
 				8425C0FA17F88EA5002F8C6A /* Empty.png */,
 				84D0B94817F888B0003A5F14 /* parrot.plist */,
 				84D0B94617F88874003A5F14 /* parrot.png */,
@@ -670,6 +706,7 @@
 				0B312F5717E85CF200D0829B /* Info.plist */,
 				0B312F5817E85CF200D0829B /* iTunesArtwork */,
 				84CBB83017F4870200680D3B /* Config.plist */,
+				847EBCD217FB083700526C34 /* splash.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1225,6 +1262,7 @@
 				0B312F4C17E85CF200D0829B /* Icon-72.png in Resources */,
 				84CBB86917F489BA00680D3B /* Wall 1 SW.png in Resources */,
 				0B312F4E17E85CF200D0829B /* Icon-Small-50.png in Resources */,
+				8406D83217FB10100076204E /* Healthbar2.png in Resources */,
 				84CBB85A17F489BA00680D3B /* Flare.png in Resources */,
 				84CBB86217F489BA00680D3B /* Walkway 1 E.png in Resources */,
 				0B312F5017E85CF200D0829B /* Icon-Small.png in Resources */,
@@ -1240,6 +1278,8 @@
 				84CBB87417F489BA00680D3B /* Wall 4 SE.png in Resources */,
 				84CBB86517F489BA00680D3B /* Walkway 2 W.png in Resources */,
 				84CBB87617F489BA00680D3B /* Wall 5 NE.png in Resources */,
+				844E04C317F9AE2B00056C59 /* BigBanana.png in Resources */,
+				844E04C117F9989F00056C59 /* woodBox.png in Resources */,
 				84CBB86417F489BA00680D3B /* Walkway 2 E.png in Resources */,
 				84CBB86E17F489BA00680D3B /* Wall 3 NE.png in Resources */,
 				84CBB87517F489BA00680D3B /* Wall 4 SW.png in Resources */,
@@ -1248,6 +1288,7 @@
 				84CBB87817F489BA00680D3B /* Wall 5 SE.png in Resources */,
 				84CBB85C17F489BA00680D3B /* Near Background.png in Resources */,
 				0B312F5617E85CF200D0829B /* Icon@2x.png in Resources */,
+				847EBCD317FB083700526C34 /* splash.plist in Resources */,
 				84CBB85E17F489BA00680D3B /* Totem 1 N.png in Resources */,
 				84CBB86A17F489BA00680D3B /* Wall 2 NE.png in Resources */,
 				84CBB86B17F489BA00680D3B /* Wall 2 NW.png in Resources */,
@@ -1290,11 +1331,13 @@
 				0B312F7C17E85CF200D0829B /* CCActionProgressTimer.m in Sources */,
 				0B312F7F17E85CF200D0829B /* CCActionTiledGrid.m in Sources */,
 				0B312F8217E85CF200D0829B /* CCActionTween.m in Sources */,
+				844E04BF17F9859D00056C59 /* WoodenBox.m in Sources */,
 				0B312F8517E85CF200D0829B /* CCAnimation.m in Sources */,
 				0B312F8817E85CF200D0829B /* CCAnimationCache.m in Sources */,
 				0B312F8B17E85CF200D0829B /* CCAtlasNode.m in Sources */,
 				0B312F8E17E85CF200D0829B /* CCCamera.m in Sources */,
 				0B312F9117E85CF200D0829B /* CCClippingNode.m in Sources */,
+				8406D83817FB11BB0076204E /* HudLayer.m in Sources */,
 				0B312F9517E85CF200D0829B /* CCConfiguration.m in Sources */,
 				0B312F9817E85CF200D0829B /* ccDeprecated.m in Sources */,
 				0B312F9B17E85CF200D0829B /* CCDirector.m in Sources */,
@@ -1311,6 +1354,7 @@
 				0B312FBC17E85CF300D0829B /* CCLabelTTF.m in Sources */,
 				0B312FBF17E85CF300D0829B /* CCLayer.m in Sources */,
 				0B312FC317E85CF300D0829B /* CCMenu.m in Sources */,
+				847EBCD617FB0B9200526C34 /* MenuScene.m in Sources */,
 				0B312FC617E85CF300D0829B /* CCMenuItem.m in Sources */,
 				0B312FC917E85CF300D0829B /* CCMotionStreak.m in Sources */,
 				0B312FCC17E85CF300D0829B /* CCNode+Debug.m in Sources */,
@@ -1356,6 +1400,7 @@
 				0B31305617E85CF400D0829B /* CCEventDispatcher.m in Sources */,
 				0B31305917E85CF400D0829B /* CCGLView.m in Sources */,
 				0B31305C17E85CF400D0829B /* CCWindow.m in Sources */,
+				844E04C617F9AE4700056C59 /* Banana.m in Sources */,
 				0B31305F17E85CF400D0829B /* base64.c in Sources */,
 				0B31306317E85CF400D0829B /* CCArray.m in Sources */,
 				0B31306617E85CF400D0829B /* ccCArray.m in Sources */,
@@ -1377,6 +1422,7 @@
 				0B3130B017E85CF400D0829B /* aabb.c in Sources */,
 				0B3130B617E85CF400D0829B /* mat4stack.c in Sources */,
 				0B3130B817E85CF400D0829B /* matrix.c in Sources */,
+				8406D83517FB10360076204E /* HealthBar.m in Sources */,
 				0B3130BA17E85CF400D0829B /* mat3.c in Sources */,
 				0B3130BC17E85CF400D0829B /* mat4.c in Sources */,
 				0B3130BE17E85CF400D0829B /* neon_matrix_impl.c in Sources */,

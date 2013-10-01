@@ -2,13 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>maxSpeed</key>
+	<string>40000.0f</string>
+	<key>testImpulse</key>
+	<string>120000.0f</string>
 	<key>lateralForce</key>
-	<string>30000.0f</string>
+	<string>100000.0f</string>
 	<key>impulse</key>
 	<string>40000.0f</string>
 	<key>JungleParrotPosition</key>
 	<string>{50,150}</string>
 	<key>gravity</key>
 	<string>150.0f</string>
+	<key>healthBarPosition</key>
+	<string>{150, 150}</string>
 </dict>
 </plist>
